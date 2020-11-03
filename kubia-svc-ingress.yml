@@ -4,10 +4,25 @@ metadata:
   name: kubia-svc-ingress
 spec:
   rules:
-    - host: i-am-gawonlee.site
+    - host: foo.example.com
       http:
         paths:
           - path: /
             backend:
               serviceName: kubia-nodeport
+              servicePort: 80
+          - path: /bar
+            backend:
+              serviceName: bar
+              servicePort: 80
+    - host: example.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: kubia-nodeport
+              servicePort: 80
+          - path: /bar
+            backend:
+              serviceName: bar
               servicePort: 80
