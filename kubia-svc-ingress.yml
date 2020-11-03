@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubia-svc-ingress
+spec:
+  rules:
+    - host: i-am-gawonlee.site
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: kubia-nodeport
+              servicePort: 80

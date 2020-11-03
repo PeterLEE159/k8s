@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: svc-no-label
+subsets:
+  - addresses:
+    - ip: 10.84.2.239
+    - ip: 10.84.2.240
+    - ip: 10.84.2.241
+    ports:
+      - port: 8080
